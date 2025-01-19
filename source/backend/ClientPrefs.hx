@@ -23,6 +23,9 @@ import states.TitleState;
 	public var vsync:Bool = false;
 	public var vibrating:Bool = false;
 
+	// reserved place for rendering mode
+
+
 	public var favSongIds:Array<String> = [];
 	public var lastFreeplayMod:String = '||bf';
 

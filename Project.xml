@@ -156,6 +156,10 @@ xsi:schemaLocation="http://lime.openfl.org/project/1.0.4 http://lime.openfl.org/
 		<haxedef name="HXVLC_LOGGING" />
 	</section>
 	
+	<!--Allow working memory greater than 1 Gig. NOTE: i recommend using Flixel 5.2.2 for this to work!-->
+	<haxedef name="HXCPP_GC_BIG_BLOCKS" if="cpp"/>
+	<!--also fixes like any "Memory Exhausted" issues you might get when compiling-->
+
 	<define name="x86_BUILD" if="32bits" />
 	
 	<!-- ______________________________ Haxedefines _____________________________ -->
