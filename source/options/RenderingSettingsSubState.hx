@@ -4,8 +4,6 @@ import objects.Character;
 
 class RenderingSettingsSubState extends BaseOptionsMenu
 {
-	var antialiasingOption:Int;
-	var boyfriend:Character = null;
 	public function new()
 	{
 		title = Language.getPhrase('rendering_menu', 'Rendering Settings');

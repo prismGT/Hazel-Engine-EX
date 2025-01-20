@@ -26,6 +26,9 @@ import states.TitleState;
 	// reserved place for rendering mode
 	public var ffmpegMode:Bool = false;
 
+	// debug options
+	public var option1:Bool = false; // this is the setting in SettingsTemplate.hx, just in case haxe gets mad at me
+
 	public var favSongIds:Array<String> = [];
 	public var lastFreeplayMod:String = '||bf';
 
