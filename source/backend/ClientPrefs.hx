@@ -24,7 +24,7 @@ import states.TitleState;
 	public var vibrating:Bool = false;
 
 	// reserved place for rendering mode
-
+	public var ffmpegMode:Bool = false;
 
 	public var favSongIds:Array<String> = [];
 	public var lastFreeplayMod:String = '||bf';
