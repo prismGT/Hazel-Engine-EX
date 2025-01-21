@@ -220,6 +220,9 @@ class PlayState extends MusicBeatState
 	var timeTxt:FlxText;
 	var scoreTxtTween:FlxTween;
 
+	// customization settings
+	var EngineWatermark:FlxText;
+
 	public static var campaignScore:Int = 0;
 	public static var campaignMisses:Int = 0;
 	public static var seenCutscene:Bool = false;
@@ -606,6 +609,33 @@ class PlayState extends MusicBeatState
 
 		if (ClientPrefs.data.showcaseMode)
 			cpuControlled = true;
+
+		EngineWatermark = new FlxText(4,FlxG.height * 0.9 + 50,0,"", 16);
+		EngineWatermark.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, RIGHT, OUTLINE,FlxColor.BLACK);
+		EngineWatermark.scrollFactor.set();
+		EngineWatermark.text = SONG.song;
+		add(EngineWatermark);
+
+		switch(ClientPrefs.data.watermarkStyle)
+		{
+			case 'Hazel Engine':
+				EngineWatermark.text = SONG.song + " // Hazel Engine " + MainMenuState.hzEXversion;
+			case 'DnB': 
+				EngineWatermark.setFormat(Paths.font("comic.ttf"), 16, FlxColor.WHITE, RIGHT, OUTLINE,FlxColor.BLACK);
+				EngineWatermark.text = SONG.song;
+				if (ClientPrefs.data.downScroll) EngineWatermark.y = healthBar.y + 50;
+			case 'JSE': 
+				if (!ClientPrefs.data.downScroll) EngineWatermark.y = FlxG.height * 0.1 - 70;
+				EngineWatermark.text = "Playing " + SONG.song + " on " + storyDifficultyText + " - HZEX v" + MainMenuState.hzEXversion;
+			case "OS 'Engine'":
+				EngineWatermark.text = SONG.song + " (" + storyDifficultyText + ") " + "| HZ " + MainMenuState.hzEXversion;
+			case 'Strident Crisis':
+				EngineWatermark.text = SONG.song + " - " + storyDifficultyText + " - Hazel Engine V" + MainMenuState.hzEXversion;
+			case 'Hide':
+				EngineWatermark.text = ""; // not sure if it should be hidden like this but okay ig lol
+
+			default: 
+		}
 
 		#if LUA_ALLOWED
 		for (notetype in noteTypes)

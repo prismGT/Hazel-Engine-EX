@@ -17,6 +17,7 @@ class OptionsState extends MusicBeatState
 		'Graphics',
 		'Game Renderer',
 		'Visuals',
+		'Customization',
 		'Gameplay',
 		'V-Slice Options',
 		#if TRANSLATIONS_ALLOWED  'Language', #end
@@ -55,6 +56,8 @@ class OptionsState extends MusicBeatState
 				openSubState(new options.RenderingSettingsSubState());
 			case 'Visuals':
 				openSubState(new options.VisualsSettingsSubState());
+			case 'Customization':
+				openSubState(new options.CustomizeSettingsSubState());
 			case 'Gameplay':
 				openSubState(new options.GameplaySettingsSubState());
 			case 'Adjust Delay and Combo':

@@ -25,6 +25,9 @@ import states.TitleState;
 
 	public var showcaseMode:Bool = false;
 
+	// customization stuff
+	public var watermarkStyle:String = 'Hazel Engine';
+
 	// reserved place for rendering mode
 	public var ffmpegMode:Bool = false;
 
