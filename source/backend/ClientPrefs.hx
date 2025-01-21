@@ -23,6 +23,8 @@ import states.TitleState;
 	public var vsync:Bool = false;
 	public var vibrating:Bool = false;
 
+	public var showcaseMode:Bool = false;
+
 	// reserved place for rendering mode
 	public var ffmpegMode:Bool = false;
 
