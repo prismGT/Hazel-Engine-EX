@@ -615,11 +615,12 @@ class PlayState extends MusicBeatState
 		EngineWatermark.scrollFactor.set();
 		EngineWatermark.text = SONG.song;
 		add(EngineWatermark);
+		if (EngineWatermark != null) EngineWatermark.cameras = [camHUD];
 
 		switch(ClientPrefs.data.watermarkStyle)
 		{
 			case 'Hazel Engine':
-				EngineWatermark.text = SONG.song + " // Hazel Engine " + MainMenuState.hzEXversion;
+				EngineWatermark.text = SONG.song + " // Hazel Engine EX " + MainMenuState.hzEXversion;
 			case 'DnB': 
 				EngineWatermark.setFormat(Paths.font("comic.ttf"), 16, FlxColor.WHITE, RIGHT, OUTLINE,FlxColor.BLACK);
 				EngineWatermark.text = SONG.song;
