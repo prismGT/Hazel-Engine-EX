@@ -15,7 +15,8 @@ class OptionsState extends MusicBeatState
 		'Controls',
 		'Adjust Delay and Combo',
 		'Graphics',
-		'Game Renderer',
+//		'Game Renderer',
+		'Optimization',
 		'Visuals',
 		'Customization',
 		'Gameplay',
@@ -52,8 +53,10 @@ class OptionsState extends MusicBeatState
 					openSubState(new options.ControlsSubState());
 			case 'Graphics':
 				openSubState(new options.GraphicsSettingsSubState());
-			case 'Game Renderer':
-				openSubState(new options.RenderingSettingsSubState());
+//			case 'Game Renderer':
+//				openSubState(new options.RenderingSettingsSubState());
+			case 'Optimization':
+				openSubState(new options.OptimizeSettingsSubState());
 			case 'Visuals':
 				openSubState(new options.VisualsSettingsSubState());
 			case 'Customization':

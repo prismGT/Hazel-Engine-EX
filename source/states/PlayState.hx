@@ -281,6 +281,9 @@ class PlayState extends MusicBeatState
 	public var luaTouchPad:TouchPad;
 	#end
 
+	// rendering values
+	public var ffmpegMode = ClientPrefs.data.ffmpegMode;
+
 	override public function create()
 	{
 		this.variables = new JoinedLuaVariables();
@@ -296,6 +299,13 @@ class PlayState extends MusicBeatState
 
 		startCallback = startCountdown;
 		endCallback = endSong;
+
+		inline cpp.vm.Gc.enable(ClientPrefs.data.enableGC || ffmpegMode && !ClientPrefs.data.noRenderGC); //lagspike prevention
+		inline Paths.clearStoredMemory();
+
+		#if sys
+		openfl.system.System.gc();
+		#end
 
 		// for lua
 		instance = this;
@@ -607,7 +617,7 @@ class PlayState extends MusicBeatState
 
 		startingSong = true;
 
-		if (ClientPrefs.data.showcaseMode)
+		if (ClientPrefs.data.showcaseMode || ffmpegMode)
 			cpuControlled = true;
 
 		EngineWatermark = new FlxText(4,FlxG.height * 0.9 + 50,0,"", 16);
@@ -1281,6 +1291,10 @@ class PlayState extends MusicBeatState
 
 	public function setSongTime(time:Float)
 	{
+			FlxG.sound.music.time = time - Conductor.offset;
+			#if FLX_PITCH FlxG.sound.music.pitch = playbackRate; #end
+			FlxG.sound.music.play();
+			
 		FlxG.sound.music.pause();
 		vocals.pause();
 		opponentVocals.pause();
@@ -3553,6 +3567,8 @@ class PlayState extends MusicBeatState
 
 		FlxG.stage.removeEventListener(KeyboardEvent.KEY_DOWN, onKeyPress);
 		FlxG.stage.removeEventListener(KeyboardEvent.KEY_UP, onKeyRelease);
+
+		cpp.vm.Gc.enable(true);
 
 		FlxG.camera.setFilters([]);
 
