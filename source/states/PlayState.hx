@@ -281,9 +281,6 @@ class PlayState extends MusicBeatState
 	public var luaTouchPad:TouchPad;
 	#end
 
-	// rendering values
-	public var ffmpegMode = ClientPrefs.data.ffmpegMode;
-
 	override public function create()
 	{
 		this.variables = new JoinedLuaVariables();

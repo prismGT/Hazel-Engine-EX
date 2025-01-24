@@ -31,14 +31,6 @@ import states.TitleState;
 	// customization stuff
 	public var watermarkStyle:String = 'Hazel Engine';
 
-	// reserved place for rendering mode
-	public var ffmpegMode:Bool = false;
-	public var targetFPS:Int = 60;
-	public var unlockFPS:Bool = false;
-	public var noRenderGC:Bool = false;
-	public var vidEncoder:String = 'libx264';
-	public var renderBitrate:Float = 8.00;
-
 	// debug options
 	public var option1:Bool = false; // this is the setting in SettingsTemplate.hx, just in case haxe gets mad at me
 
