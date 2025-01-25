@@ -297,7 +297,7 @@ class PlayState extends MusicBeatState
 		startCallback = startCountdown;
 		endCallback = endSong;
 
-		inline cpp.vm.Gc.enable(ClientPrefs.data.enableGC || ffmpegMode && !ClientPrefs.data.noRenderGC); //lagspike prevention
+		inline cpp.vm.Gc.enable(ClientPrefs.data.enableGC); //lagspike prevention
 		inline Paths.clearStoredMemory();
 
 		#if sys
@@ -614,7 +614,7 @@ class PlayState extends MusicBeatState
 
 		startingSong = true;
 
-		if (ClientPrefs.data.showcaseMode || ffmpegMode)
+		if (ClientPrefs.data.showcaseMode)
 			cpuControlled = true;
 
 		EngineWatermark = new FlxText(4,FlxG.height * 0.9 + 50,0,"", 16);
