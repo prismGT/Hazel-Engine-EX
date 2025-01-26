@@ -51,6 +51,12 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 			BOOL);
 		addOption(option);
 
+		var option:Option = new Option('Crash on Miss',
+			'what did you expect XD',
+			'crashOnMiss',
+			BOOL);
+		addOption(option);
+
 		var option:Option = new Option('Vibrations',
 			"If checked, your device will vibrate at some cases.",
 			'vibrating',

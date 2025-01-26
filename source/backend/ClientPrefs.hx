@@ -22,6 +22,7 @@ import states.TitleState;
 	public var popUpRating:Bool = true;
 	public var vsync:Bool = false;
 	public var vibrating:Bool = false;
+	public var crashOnMiss:Bool = false;
 
 	public var showcaseMode:Bool = false;
 
