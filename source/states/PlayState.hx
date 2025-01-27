@@ -272,6 +272,11 @@ class PlayState extends MusicBeatState
 	private var keysArray:Array<String>;
 	public var songName:String;
 
+	// hazels test features
+	public var amountBeforeSkip:Int = 2; // this is the amount of notes before a custom note skipping feature skips it
+
+	public var notesHitBf:Int = 0;
+
 	// Callbacks for stages
 	public var startCallback:Void->Void = null;
 	public var endCallback:Void->Void = null;
@@ -604,10 +609,14 @@ class PlayState extends MusicBeatState
 		botplayTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		botplayTxt.scrollFactor.set();
 		botplayTxt.borderSize = 1.25;
-		botplayTxt.visible = cpuControlled && !ClientPrefs.data.showcaseMode;
+		botplayTxt.visible = cpuControlled;
 		uiGroup.add(botplayTxt);
 		if(ClientPrefs.data.downScroll)
 			botplayTxt.y = healthBar.y + 70;
+
+		if (!ClientPrefs.data.showcaseMode) {
+			botplayTxt.text = '$totalNotesHit';
+		}
 
 		uiGroup.cameras = [camHUD];
 		noteGroup.cameras = [camHUD];
@@ -2937,7 +2946,6 @@ class PlayState extends MusicBeatState
 
 		if (ClientPrefs.data.popUpRating)
 		{
-			if (!cpuControlled) {
 			rating.loadGraphic(Paths.image(uiPrefix + daRating.image + uiPostfix));
 			rating.screenCenter();
 			rating.x = placement - 40;
@@ -3033,7 +3041,6 @@ class PlayState extends MusicBeatState
 			});
 		}
 	}
-}
 
 	public var strumsBlocked:Array<Bool> = [];
 	private function onKeyPress(event:KeyboardEvent):Void
@@ -3467,7 +3474,7 @@ class PlayState extends MusicBeatState
 				combo++;
 				maxCombo = FlxMath.maxInt(maxCombo,combo);
 				if(combo > 9999) combo = 9999;
-				popUpScore(note);
+				if (!ClientPrefs.data.noBotLag) popUpScore(note);
 			}
 			var gainHealth:Bool = true; // prevent health gain, *if* sustains are treated as a singular note
 			if (guitarHeroSustains && note.isSustainNote) gainHealth = false;

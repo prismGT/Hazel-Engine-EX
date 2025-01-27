@@ -15,6 +15,12 @@ class OptimizeSettingsSubState extends BaseOptionsMenu
 			BOOL); //Variable type
 		addOption(option);
 
+		var option:Option = new Option('No Botplay Lag', //Name
+			'If checked, the game wont have botplay lag anymore.', //Description
+			'noBotLag', //Save data variable name
+			BOOL); //Variable type
+		addOption(option);
+
 		super();
 	}
 }
