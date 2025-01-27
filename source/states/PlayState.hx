@@ -2937,6 +2937,7 @@ class PlayState extends MusicBeatState
 
 		if (ClientPrefs.data.popUpRating)
 		{
+			if (!cpuControlled) {
 			rating.loadGraphic(Paths.image(uiPrefix + daRating.image + uiPostfix));
 			rating.screenCenter();
 			rating.x = placement - 40;
@@ -3032,6 +3033,7 @@ class PlayState extends MusicBeatState
 			});
 		}
 	}
+}
 
 	public var strumsBlocked:Array<Bool> = [];
 	private function onKeyPress(event:KeyboardEvent):Void
