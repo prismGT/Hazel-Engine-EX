@@ -156,6 +156,7 @@ class PlayState extends MusicBeatState
 	public var boyfriend:Character = null;
 
 	public var notes:FlxTypedGroup<Note>;
+	public var sustainNotes:FlxTypedGroup<Note>;
 	public var unspawnNotes:Array<Note> = [];
 	public var eventNotes:Array<EventNote> = [];
 
@@ -218,6 +219,9 @@ class PlayState extends MusicBeatState
 	public var songHits:Int = 0;
 	public var songMisses:Int = 0;
 	public var scoreTxt:FlxText;
+
+	var notesAddedCount:Int = 0;
+
 	var timeTxt:FlxText;
 	var scoreTxtTween:FlxTween;
 
@@ -272,9 +276,7 @@ class PlayState extends MusicBeatState
 	private var keysArray:Array<String>;
 	public var songName:String;
 
-	// hazels test features
-	public var amountBeforeSkip:Int = 2; // this is the amount of notes before a custom note skipping feature skips it
-
+	// hazels wip features
 	public var notesHitBf:Int = 0;
 
 	// Callbacks for stages

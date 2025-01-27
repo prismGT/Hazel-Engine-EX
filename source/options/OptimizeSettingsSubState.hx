@@ -21,6 +21,12 @@ class OptimizeSettingsSubState extends BaseOptionsMenu
 			BOOL); //Variable type
 		addOption(option);
 
+		var option:Option = new Option('Faster Note Spawning', //Name
+			'If checked, the game will use a faster way of spawning notes.', //Description
+			'fastNoteSpawn', //Save data variable name
+			BOOL); //Variable type
+		addOption(option);
+
 		super();
 	}
 }
