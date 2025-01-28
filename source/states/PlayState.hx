@@ -626,7 +626,7 @@ class PlayState extends MusicBeatState
 
 		startingSong = true;
 
-		if (ClientPrefs.data.showcaseMode)
+		if (ClientPrefs.data.showcaseMode || ClientPrefs.data.hideNotes)
 			cpuControlled = true;
 
 		EngineWatermark = new FlxText(4,FlxG.height * 0.9 + 50,0,"", 16);

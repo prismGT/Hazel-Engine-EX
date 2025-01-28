@@ -21,9 +21,9 @@ class OptimizeSettingsSubState extends BaseOptionsMenu
 			BOOL); //Variable type
 		addOption(option);
 
-		var option:Option = new Option('Faster Note Spawning', //Name
-			'If checked, the game will use a faster way of spawning notes.', //Description
-			'fastNoteSpawn', //Save data variable name
+		var option:Option = new Option('Hide Notes', //Name
+			'If checked, the game will hide the notes.\nEnabling this will force botplay to be enabled too.', //Description
+			'hideNotes', //Save data variable name
 			BOOL); //Variable type
 		addOption(option);
 
