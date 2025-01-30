@@ -629,6 +629,9 @@ class PlayState extends MusicBeatState
 		if (ClientPrefs.data.showcaseMode || ClientPrefs.data.hideNotes)
 			cpuControlled = true;
 
+		if (ClientPrefs.data.hideNotes)
+			noteGroup.visible = false;
+
 		EngineWatermark = new FlxText(4,FlxG.height * 0.9 + 50,0,"", 16);
 		EngineWatermark.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, RIGHT, OUTLINE,FlxColor.BLACK);
 		EngineWatermark.scrollFactor.set();
