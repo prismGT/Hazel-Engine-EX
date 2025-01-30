@@ -21,9 +21,9 @@ class OptimizeSettingsSubState extends BaseOptionsMenu
 			BOOL); //Variable type
 		addOption(option);
 
-		var option:Option = new Option('Hide Notes', //Name
-			'If checked, the game will hide the notes.\nEnabling this will force botplay to be enabled too.', //Description
-			'hideNotes', //Save data variable name
+		var option:Option = new Option('Show Notes', //Name
+			'If unchecked, the game will hide the notes.\nYou will still be able to hit the notes though.', //Description
+			'showNotes', //Save data variable name
 			BOOL); //Variable type
 		addOption(option);
 

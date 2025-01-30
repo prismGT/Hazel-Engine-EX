@@ -29,7 +29,7 @@ import states.TitleState;
 	// optimization settings
 	public var enableGC:Bool = true;
 	public var noBotLag:Bool = true;
-	public var hideNotes:Bool = false;
+	public var showNotes:Bool = true;
 
 	// customization stuff
 	public var watermarkStyle:String = 'Hazel Engine';
