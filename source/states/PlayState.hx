@@ -14,6 +14,7 @@ import flixel.FlxBasic;
 import flixel.FlxObject;
 import flixel.FlxSubState;
 import flixel.util.FlxSort;
+import flixel.util.FlxTimer as Timer;
 import flixel.util.FlxStringUtil;
 import flixel.util.FlxSave;
 import flixel.input.keyboard.FlxKey;
@@ -607,7 +608,7 @@ class PlayState extends MusicBeatState
 		updateScore(false);
 		uiGroup.add(scoreTxt);
 
-		botplayTxt = new FlxText(400, healthBar.y - 90, FlxG.width - 800, Language.getPhrase("Botplay").toUpperCase(), 32);
+		botplayTxt = new FlxText(400, healthBar.y - 90, FlxG.width - 800, Language.getPhrase("Auto").toUpperCase(), 32);
 		botplayTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		botplayTxt.scrollFactor.set();
 		botplayTxt.borderSize = 1.25;
@@ -615,10 +616,6 @@ class PlayState extends MusicBeatState
 		uiGroup.add(botplayTxt);
 		if(ClientPrefs.data.downScroll)
 			botplayTxt.y = healthBar.y + 70;
-
-		if (!ClientPrefs.data.showcaseMode) {
-			botplayTxt.text = '$totalNotesHit';
-		}
 
 		uiGroup.cameras = [camHUD];
 		noteGroup.cameras = [camHUD];
@@ -633,7 +630,10 @@ class PlayState extends MusicBeatState
 			noteGroup.visible = true;
 		else
 			noteGroup.visible = false;
+			cpuControlled = true;
 
+
+		
 		EngineWatermark = new FlxText(4,FlxG.height * 0.9 + 50,0,"", 16);
 		EngineWatermark.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, RIGHT, OUTLINE,FlxColor.BLACK);
 		EngineWatermark.scrollFactor.set();
