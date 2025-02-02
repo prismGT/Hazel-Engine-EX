@@ -39,6 +39,7 @@ import states.TitleState;
 
 	// other options
 
+	
 	public var favSongIds:Array<String> = [];
 	public var lastFreeplayMod:String = '||bf';
 
