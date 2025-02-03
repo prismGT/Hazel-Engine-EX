@@ -35,7 +35,8 @@ import states.TitleState;
 	public var watermarkStyle:String = 'Hazel Engine';
 
 	// debug options
-	public var option1:Bool = false; // this is the setting in SettingsTemplate.hx, just in case haxe gets mad at me
+	public var openDoor:String = '!'; // this is from h-slice lol, credits to hrk ig
+	public var option1:Bool = false; // this is the setting in SettingsTemplate.hx
 
 	// other options
 

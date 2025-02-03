@@ -9,6 +9,17 @@ class OptimizeSettingsSubState extends BaseOptionsMenu
 		title = Language.getPhrase('optimize_menu', 'Optimization Settings');
 		rpcTitle = 'Optimization Settings'; //for Discord Rich Presence
 
+		var option:Option = new Option('WORK IN PROGRESS', //Name
+			'Make changes at your own risk.', //Description
+			'openDoor', //Save data variable name
+			STRING,
+			['!']); //Variable type
+		addOption(option);
+		/*
+		this is here for when you want to say that the features are a wip
+		while showing it in-game
+		*/
+
 		var option:Option = new Option('Enable Garbage Collection', //Name
 			'If checked, the game will be able to garbage collect,\nimproving performance I think.', //Description
 			'enableGC', //Save data variable name
@@ -16,7 +27,7 @@ class OptimizeSettingsSubState extends BaseOptionsMenu
 		addOption(option);
 
 		var option:Option = new Option('Hide Score Popups', //Name
-			'If checked, the game wont have botplay lag anymore.', //Description
+			'If checked, the game will hide score popups.\nApparently this would fix botplay lag in\nPsych Engine but not P-Slice???????? :sob:', //Description
 			'noBotLag', //Save data variable name
 			BOOL); //Variable type
 		addOption(option);
