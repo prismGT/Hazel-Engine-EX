@@ -9,6 +9,13 @@ class CustomizeSettingsSubState extends BaseOptionsMenu
 		title = Language.getPhrase('customize_menu', 'Customization Settings');
 		rpcTitle = 'Customization Settings Menu'; //for Discord Rich Presence
 
+		var option:Option = new Option('WORK IN PROGRESS', //Name
+			'These options probably wont\ncrash your game, but\nIm putting this here anyway', //Description
+			'openDoor', //Save data variable name
+			STRING,
+			['!']); //Variable type
+		addOption(option);
+
 		var option:Option = new Option('Watermark Style', //Name
 			'What would you prefer to have as the engine watermark?', //Description
 			'watermarkStyle', //Save data variable name
