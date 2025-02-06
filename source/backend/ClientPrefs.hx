@@ -33,6 +33,7 @@ import states.TitleState;
 
 	// customization stuff
 	public var watermarkStyle:String = 'Hazel Engine';
+	public var ytWatermark:Bool = false;
 
 	// debug options
 	public var openDoor:String = '!'; // this is from h-slice lol, credits to hrk ig

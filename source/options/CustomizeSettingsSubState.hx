@@ -23,6 +23,12 @@ class CustomizeSettingsSubState extends BaseOptionsMenu
 			['Hazel Engine', 'DnB', 'JSE', "OS 'Engine'", 'Strident Crisis', 'Hide']);
 		addOption(option);
 
+		var option:Option = new Option('Watermark Style', //Name
+			'For making it harder for people to steal your videos.\nYou can change this in:\nassets/data/ytWatermark.txt', //Description
+			'ytWatermark', //Save data variable name
+			BOOL);
+		addOption(option);
+
 		super();
 	}
 }
