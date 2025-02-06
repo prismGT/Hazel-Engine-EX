@@ -1,6 +1,5 @@
 package states;
 
-import backend.FFMpegRender;
 import mikolka.JoinedLuaVariables;
 import substates.StickerSubState;
 import mikolka.vslice.freeplay.FreeplayState;
@@ -293,20 +292,6 @@ class PlayState extends MusicBeatState
 
 	override public function create()
 	{
-		#if desktop
-		if (!ClientPrefs.data.ffmpegMode) {
-			FlxG.fixedTimestep = true;
-			FlxG.timeScale = ClientPrefs.data.framerate / ClientPrefs.data.targetFPS;
-			FFMpegRender.initRender();
-		}
-
-		if (!ClientPrefs.data.unlockFPS) {
-			FlxG.timeScale = 1000 / ClientPrefs.data.targetFPS;
-			FlxG.updateFramerate = 1000;
-			FlxG.drawFramerate = 1000;
-		}
-		#end
-
 		this.variables = new JoinedLuaVariables();
 		//trace('Playback Rate: ' + playbackRate);
 		Paths.clearUnusedMemory();
