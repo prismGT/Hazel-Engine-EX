@@ -44,7 +44,7 @@ class OutdatedState extends MusicBeatState
 		if(!leftState) {
 			if (controls.ACCEPT) {
 				leftState = true;
-				CoolUtil.browserLoad("https://github.com/null0346/Hazel-Engine-EX/releases");
+				CoolUtil.browserLoad("https://github.com/prismGT/Hazel-Engine-EX/releases");
 			}
 			else if(controls.BACK) {
 				leftState = true;

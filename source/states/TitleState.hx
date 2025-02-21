@@ -88,7 +88,7 @@ class TitleState extends MusicBeatState
 		if (ClientPrefs.data.checkForUpdates && !closedState)
 		{
 			trace('checking for update');
-			var http = new haxe.Http("https://raw.githubusercontent.com/null0346/Hazel-Engine-EX/refs/heads/master/gitVersion.txt");
+			var http = new haxe.Http("https://raw.githubusercontent.com/prismGT/Hazel-Engine-EX/refs/heads/master/gitVersion.txt");
 
 			http.onData = function(data:String)
 			{

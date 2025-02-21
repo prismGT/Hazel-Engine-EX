@@ -21,13 +21,13 @@ class OptimizeSettingsSubState extends BaseOptionsMenu
 		*/
 
 		var option:Option = new Option('Enable Garbage Collection', //Name
-			'If checked, the game will be able to garbage collect,\nimproving performance I think.', //Description
+			'If checked, the game will be able to garbage collect,\nimproving performance I think.\nDisable this to load bigger charts without insane lag when playing.', //Description
 			'enableGC', //Save data variable name
 			BOOL); //Variable type
 		addOption(option);
 
 		var option:Option = new Option('Hide Score Popups', //Name
-			'If checked, the game will hide score popups.\nApparently this would fix botplay lag in\nPsych Engine but not P-Slice???????? :sob:', //Description
+			'If checked, the game will hide score popups.\nApparently this would fix botplay lag in\nPsych Engine but not P-Slice???????? :sob:\nFun fact: this is still called "noBotLag" in the code\n- prism', //Description
 			'noBotLag', //Save data variable name
 			BOOL); //Variable type
 		addOption(option);
