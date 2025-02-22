@@ -84,49 +84,6 @@ class FPSCounter extends TextField
 		'FPS: $currentFPS' + 
 		'\nMemory Usage: ${flixel.util.FlxStringUtil.formatBytes(memoryMegas)}' +
 		os;
-
-		switch(ClientPrefs.data.fakeMemUsage) {
-			case 'Disable':
-				text = 
-				'FPS: $currentFPS' + 
-				'\nMemory Usage: ${flixel.util.FlxStringUtil.formatBytes(memoryMegas)}' +
-				os;
-			case '84 GB':
-				text = 
-				'FPS: $currentFPS' + 
-				'\nMemory Usage: 84.36 GB' +
-				os;
-			case '148.17 GB':
-				text =
-				'FPS: $currentFPS' +
-				'\nMemory Usage: 148.17 GB' +
-				os;
-			case '768.52 GB':
-				text =
-				'FPS: $currentFPS' +
-				'\nMemory Usage: 768.52 GB' +
-				os;
-			case '1 TB':
-				text =
-				'FPS: $currentFPS' +
-				'\nMemory Usage: 1 TB' +
-				os;
-			case '2 TB':
-				text =
-				'FPS: $currentFPS' +
-				'\nMemory Usage: 2 TB' +
-				os;
-			case '4 TB':
-				text =
-				'FPS: $currentFPS' +
-				'\nMemory Usage: 4 TB' +
-				os;
-			case '40 TB':
-				text =
-				'FPS: $currentFPS' +
-				'\nMemory Usage: 40 TB' +
-				os;
-		}
 		
 		textColor = 0xFFFFFFFF;
 		if (currentFPS < FlxG.drawFramerate * 0.5)
