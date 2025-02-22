@@ -13,7 +13,7 @@ class MainMenuState extends MusicBeatState
 {
 	public static var psychEngineVersion:String = '1.0';
 	public static var pSliceVersion:String = '2.2.2'; 
-	public static var hzEXversion:String = '1.0.0'; // This is also used for Discord RPC
+	public static var hzEXversion:String = '1.1.0'; // This is also used for Discord RPC
 	public static var expOrNot:String = 'Release'; // if this is an experimental build, change the text to "Experimental Build", and for release builds just use "Release"
 	public static var funkinVersion:String = '0.5.3'; // Version of funkin' we are emulationg
 	public static var curSelected:Int = 0;
