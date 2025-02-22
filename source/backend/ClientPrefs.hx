@@ -26,6 +26,9 @@ import states.TitleState;
 
 	public var showcaseMode:Bool = false;
 
+	// joke settings
+	public var fakeMemUsage:String = 'Disable';
+
 	// optimization settings
 	public var enableGC:Bool = true;
 	public var noBotLag:Bool = true;

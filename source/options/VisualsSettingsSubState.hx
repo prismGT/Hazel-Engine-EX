@@ -171,6 +171,13 @@ class VisualsSettingsSubState extends BaseOptionsMenu
 			BOOL);
 		addOption(option);
 		option.onChange = onChangeFPSCounter;
+
+		var option:Option = new Option('Fake Memory Usage', //Name
+			'It does what it is called. This is for silly screenshots of\ninsane memory usage.', //Description
+			'fakeMemUsage', //Save data variable name
+			STRING,
+			['Disable', '84.36 GB', '148.17 GB', '768.52 GB', '1 TB', '2 TB', '4 TB', '40 TB']);
+		addOption(option);
 		
 		var option:Option = new Option('Pause Music:',
 			"What song do you prefer for the Pause Screen?",
