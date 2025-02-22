@@ -198,13 +198,4 @@ class CoolUtil
 		FlxG.stage.window.alert(message, title);
 		#end
 	}
-
-	public static function formatMemUsage(megabytes:Float, gigabytes:Float, terabytes:Float)
-							{megabytes = flixel.util.FlxStringUtil.formatBytes(megabytes);
-			if (megabytes += 1024.0) {
-										gigabytes == 1.0;
-
-			}
-							}
-	// how does this formatting not give me errors
 }
