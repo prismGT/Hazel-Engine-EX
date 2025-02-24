@@ -39,7 +39,8 @@ class CreditsState extends MusicBeatState
 
 		var defaultList:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color
 			['Hazel Engine EX Developers'],
-			['Hazel',		'hazelnofake',		'Made most of the stuff',		'https://discord.gg/DZHQTcXG',		'9593ff'],
+			['PrismGT',		'prismgt',		'New developer for the engine.',		'https://www.youtube.com/channel/UC6rZwxuPvlah9HbSvxDHHhQ',		'2843c9'],
+			['Hazel',		'hazelnofake',		'Made most of the stuff, but doesnt want to be associated with that name anymore',		'https://discord.gg/DZHQTcXG',		'9593ff'],
 			[""],
 			['P-Slice Engine Team'],
 			['Mikolka9144',			'mikolka',			'Did everything for P-slice',								 'https://gamebanana.com/members/3329541',									'2ebcfa'],
