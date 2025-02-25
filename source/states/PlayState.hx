@@ -207,7 +207,6 @@ class PlayState extends MusicBeatState
 
 	public var botplaySine:Float = 0;
 	public var botplayTxt:FlxText;
-	public var ytWatermark:FlxText;
 
 	public var iconP1:HealthIcon;
 	public var iconP2:HealthIcon;
@@ -617,10 +616,6 @@ class PlayState extends MusicBeatState
 		uiGroup.add(botplayTxt);
 		if(ClientPrefs.data.downScroll)
 			botplayTxt.y = healthBar.y + 70;
-
-		ytWatermark = new FlxText(400, healthBar.y - 90, FlxG.width - 800, '', 32);
-		ytWatermark.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-		ytWatermark.text = sys.io.File.getContent('assets/data/ytWatermark.txt');
 
 		uiGroup.cameras = [camHUD];
 		noteGroup.cameras = [camHUD];
